@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Preloader from "./components/Preloader";
-import Enhanced3DHero from "./components/Enhanced3DHero";
+import CleanHero from "./components/CleanHero";
 import Skills from "./components/Skills";
-import AnimatedProjectCarousel from "./components/AnimatedProjectCarousel";
+import ModernProjectCarousel from "./components/ModernProjectCarousel";
 import Enhanced3DExperience from "./components/Enhanced3DExperience";
 import Fixed3DContact from "./components/Fixed3DContact";
 
@@ -404,9 +404,9 @@ const Portfolio = () => {
 
       {/* Main Content with enhanced 3D layers */}
       <div className="relative z-10" style={{ transformStyle: 'preserve-3d' }}>
-        <Enhanced3DHero />
+        <CleanHero />
         <Skills />
-        <AnimatedProjectCarousel />
+        <ModernProjectCarousel />
         <Enhanced3DExperience />
         <Fixed3DContact />
       </div>
