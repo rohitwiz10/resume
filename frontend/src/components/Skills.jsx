@@ -72,13 +72,21 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-24 bg-gradient-to-br from-slate-50 to-white">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-24 bg-gradient-to-br from-cream to-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <img 
+          src="https://images.unsplash.com/photo-1554306274-f23873d9a26c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHw0fHx3ZWIzJTIwZGV2ZWxvcGVyfGVufDB8fHx8MTc1ODQzMzkwMHww&ixlib=rb-4.1.0&q=85"
+          alt="Development Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-blue-700 bg-clip-text text-transparent transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 text-charcoal transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             Technical Expertise
           </h2>
-          <p className={`text-xl text-slate-600 max-w-3xl mx-auto transition-all duration-1000 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <p className={`text-xl text-charcoal/70 max-w-3xl mx-auto transition-all duration-1000 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             A comprehensive skill set spanning modern web development, blockchain technology, and full-stack application architecture
           </p>
         </div>
