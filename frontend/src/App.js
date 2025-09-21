@@ -5,10 +5,10 @@ import Preloader from "./components/Preloader";
 import Enhanced3DHero from "./components/Enhanced3DHero";
 import Skills from "./components/Skills";
 import Enhanced3DCarousel from "./components/Enhanced3DCarousel";
-import Experience from "./components/Experience";
-import Contact from "./components/Contact";
+import Enhanced3DExperience from "./components/Enhanced3DExperience";
+import Enhanced3DContact from "./components/Enhanced3DContact";
 
-// Enhanced custom styles for the new 3D design
+// Enhanced custom styles for the complete 3D design system
 const customStyles = `
   :root {
     --cream: #F9F2E9;
@@ -49,6 +49,35 @@ const customStyles = `
   @keyframes float {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-15px) rotate(2deg); }
+  }
+  
+  @keyframes float-3d {
+    0%, 100% { 
+      transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg); 
+    }
+    50% { 
+      transform: translate3d(0, -20px, 10px) rotateX(5deg) rotateY(5deg); 
+    }
+  }
+  
+  @keyframes float-rotate {
+    0%, 100% { 
+      transform: translate3d(0, 0, 0) rotateZ(0deg); 
+    }
+    50% { 
+      transform: translate3d(0, -15px, 5px) rotateZ(180deg); 
+    }
+  }
+  
+  @keyframes pulse-3d {
+    0%, 100% { 
+      transform: scale(1) translateZ(0); 
+      box-shadow: 0 0 20px rgba(30, 30, 30, 0.3);
+    }
+    50% { 
+      transform: scale(1.2) translateZ(10px); 
+      box-shadow: 0 10px 40px rgba(30, 30, 30, 0.5);
+    }
   }
   
   @keyframes pulse-glow {
@@ -103,6 +132,16 @@ const customStyles = `
     }
   }
   
+  @keyframes grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(40px, 40px); }
+  }
+  
+  @keyframes grid-drift {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(50px, 50px) rotate(360deg); }
+  }
+  
   .animate-fadeInDown {
     animation: fadeInDown 0.8s ease-out;
   }
@@ -127,6 +166,18 @@ const customStyles = `
     animation: float 4s ease-in-out infinite;
   }
   
+  .animate-float-3d {
+    animation: float-3d 6s ease-in-out infinite;
+  }
+  
+  .animate-float-rotate {
+    animation: float-rotate 4s ease-in-out infinite;
+  }
+  
+  .animate-pulse-3d {
+    animation: pulse-3d 2s ease-in-out infinite;
+  }
+  
   .animate-pulse-glow {
     animation: pulse-glow 3s ease-in-out infinite;
   }
@@ -141,6 +192,14 @@ const customStyles = `
   
   .animate-hologram {
     animation: hologram-flicker 2s ease-in-out infinite;
+  }
+  
+  .animate-grid-move {
+    animation: grid-move 20s linear infinite;
+  }
+  
+  .animate-grid-drift {
+    animation: grid-drift 30s linear infinite;
   }
   
   /* Enhanced transition delays */
@@ -189,7 +248,7 @@ const customStyles = `
   
   /* Advanced glassmorphism effect */
   .glass-advanced {
-    background: rgba(249, 242, 233, 0.7);
+    background: rgba(249, 242, 233, 0.8);
     backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid rgba(30, 30, 30, 0.1);
     box-shadow: 
@@ -205,7 +264,7 @@ const customStyles = `
   }
   
   .hover-lift-3d:hover {
-    transform: translateY(-12px) translateZ(20px) rotateX(5deg) scale(1.05);
+    transform: translateY(-12px) translateZ(20px) rotateX(5deg) scale(1.03);
     box-shadow: 
       0 30px 60px rgba(30, 30, 30, 0.2),
       0 0 0 1px rgba(30, 30, 30, 0.05);
@@ -232,6 +291,12 @@ const customStyles = `
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: hologram-flicker 3s ease-in-out infinite;
+  }
+  
+  /* Transform GPU acceleration */
+  .transform-gpu {
+    transform-style: preserve-3d;
+    will-change: transform;
   }
 `;
 
@@ -297,17 +362,22 @@ const Portfolio = () => {
               Chinmay Dhamgunde
             </div>
             <div className="hidden md:flex space-x-8">
-              {['Skills', 'Projects', 'Experience', 'Contact'].map((item, index) => (
+              {[
+                { name: 'Skills', href: '#skills' },
+                { name: 'Projects', href: '#project-carousel' },
+                { name: 'Experience', href: '#experience' },
+                { name: 'Contact', href: '#contact' }
+              ].map((item, index) => (
                 <a 
-                  key={item}
-                  href={`#${item.toLowerCase()}`} 
+                  key={item.name}
+                  href={item.href} 
                   className="text-charcoal/70 hover:text-charcoal transition-all duration-300 font-medium relative group transform hover:scale-110"
                   style={{ 
                     transformStyle: 'preserve-3d',
                     transform: `translateZ(${10 + index * 5}px)`
                   }}
                 >
-                  {item}
+                  {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-charcoal transition-all duration-500 group-hover:w-full"></span>
                   <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-charcoal/50 blur-sm transition-all duration-500 group-hover:w-full group-hover:left-0"></span>
                 </a>
@@ -322,8 +392,8 @@ const Portfolio = () => {
         <Enhanced3DHero />
         <Skills />
         <Enhanced3DCarousel />
-        <Experience />
-        <Contact />
+        <Enhanced3DExperience />
+        <Enhanced3DContact />
       </div>
 
       {/* Enhanced Footer with 3D effects */}
@@ -342,14 +412,19 @@ const Portfolio = () => {
             <div className="transform hover:scale-105 transition-all duration-500" style={{ transform: 'translateZ(15px)' }}>
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <div className="space-y-2">
-                {['skills', 'project-carousel', 'experience', 'contact'].map((link, index) => (
+                {[
+                  { name: 'Skills', href: '#skills' },
+                  { name: 'Projects', href: '#project-carousel' },
+                  { name: 'Experience', href: '#experience' },
+                  { name: 'Contact', href: '#contact' }
+                ].map((link, index) => (
                   <a 
-                    key={link}
-                    href={`#${link}`} 
+                    key={link.name}
+                    href={link.href} 
                     className="block text-cream/70 hover:text-cream transition-all duration-300 transform hover:translateX-2"
                     style={{ transform: `translateZ(${5 + index * 2}px)` }}
                   >
-                    {link.charAt(0).toUpperCase() + link.slice(1).replace('-', ' ')}
+                    {link.name}
                   </a>
                 ))}
               </div>
