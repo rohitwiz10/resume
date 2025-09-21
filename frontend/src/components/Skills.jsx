@@ -128,17 +128,17 @@ const Skills = () => {
                 </div>
 
                 {/* Skill proficiency indicator */}
-                <div className="mt-4 pt-4 border-t border-slate-100">
-                  <div className={`h-2 bg-slate-100 rounded-full overflow-hidden ${isVisible ? 'animate-fillBar' : ''}`}>
+                <div className="mt-4 pt-4 border-t border-charcoal/10">
+                  <div className={`h-2 bg-charcoal/10 rounded-full overflow-hidden ${isVisible ? 'animate-fillBar' : ''}`}>
                     <div 
-                      className={`h-full bg-gradient-to-r ${category.color} transition-all duration-1000 ease-out`}
+                      className={`h-full bg-charcoal transition-all duration-1000 ease-out`}
                       style={{ 
                         width: isVisible ? `${Math.min(85 + (category.skills.length * 2), 95)}%` : '0%',
                         transitionDelay: `${(index * 100) + 300}ms`
                       }}
                     ></div>
                   </div>
-                  <p className="text-xs text-slate-500 mt-2 text-center">
+                  <p className="text-xs text-charcoal/50 mt-2 text-center">
                     {category.skills.length} technologies
                   </p>
                 </div>
