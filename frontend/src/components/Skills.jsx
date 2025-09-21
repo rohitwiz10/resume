@@ -106,7 +106,7 @@ const Skills = () => {
                   <div className={`w-12 h-12 rounded-xl bg-charcoal p-3 mb-4 transform transition-transform duration-300 hover:scale-110 hover:rotate-12`}>
                     <IconComponent className="w-6 h-6 text-cream" />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                  <h3 className="text-xl font-semibold text-charcoal mb-2">
                     {category.title}
                   </h3>
                 </div>
@@ -116,7 +116,7 @@ const Skills = () => {
                     <Badge 
                       key={skill}
                       variant="secondary"
-                      className={`text-sm py-1 px-3 bg-slate-100 text-slate-700 hover:bg-gradient-to-r hover:${category.color} hover:text-white transition-all duration-300 transform hover:scale-105 ${isVisible ? 'animate-fadeIn' : ''}`}
+                      className={`text-sm py-1 px-3 bg-charcoal/5 text-charcoal hover:bg-charcoal hover:text-cream transition-all duration-300 transform hover:scale-105 ${isVisible ? 'animate-fadeIn' : ''}`}
                       style={{ 
                         animationDelay: `${(index * 100) + (skillIndex * 50)}ms`,
                         animationFillMode: 'both'
