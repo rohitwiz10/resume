@@ -150,7 +150,7 @@ const Skills = () => {
         {/* Floating skill badges animation */}
         <div className="mt-16 text-center">
           <div className={`transition-all duration-1000 delay-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 text-lg font-medium animate-pulse">
+            <Badge className="bg-charcoal text-cream px-6 py-2 text-lg font-medium animate-pulse-glow">
               Full-Stack • Web3 • Blockchain Expert
             </Badge>
           </div>
