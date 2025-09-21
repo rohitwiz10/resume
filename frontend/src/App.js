@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Preloader from "./components/Preloader";
 import Enhanced3DHero from "./components/Enhanced3DHero";
 import Skills from "./components/Skills";
-import Enhanced3DCarousel from "./components/Enhanced3DCarousel";
+import AnimatedProjectCarousel from "./components/AnimatedProjectCarousel";
 import Enhanced3DExperience from "./components/Enhanced3DExperience";
-import Enhanced3DContact from "./components/Enhanced3DContact";
+import Fixed3DContact from "./components/Fixed3DContact";
 
 // Enhanced custom styles for the complete 3D design system
 const customStyles = `
@@ -142,6 +142,17 @@ const customStyles = `
     100% { transform: translate(50px, 50px) rotate(360deg); }
   }
   
+  @keyframes float-particle-3d {
+    0%, 100% { 
+      transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg); 
+      opacity: 0.3;
+    }
+    50% { 
+      transform: translate3d(10px, -20px, 15px) rotateX(180deg) rotateY(180deg); 
+      opacity: 1;
+    }
+  }
+  
   .animate-fadeInDown {
     animation: fadeInDown 0.8s ease-out;
   }
@@ -200,6 +211,10 @@ const customStyles = `
   
   .animate-grid-drift {
     animation: grid-drift 30s linear infinite;
+  }
+  
+  .animate-float-particle-3d {
+    animation: float-particle-3d 4s ease-in-out infinite;
   }
   
   /* Enhanced transition delays */
@@ -391,9 +406,9 @@ const Portfolio = () => {
       <div className="relative z-10" style={{ transformStyle: 'preserve-3d' }}>
         <Enhanced3DHero />
         <Skills />
-        <Enhanced3DCarousel />
+        <AnimatedProjectCarousel />
         <Enhanced3DExperience />
-        <Enhanced3DContact />
+        <Fixed3DContact />
       </div>
 
       {/* Enhanced Footer with 3D effects */}
