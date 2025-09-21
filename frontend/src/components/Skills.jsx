@@ -36,37 +36,37 @@ const Skills = () => {
     languages: {
       title: 'Languages',
       icon: Code,
-      color: 'from-blue-500 to-blue-600',
+      color: 'charcoal',
       skills: skills.languages
     },
     frontend: {
       title: 'Frontend',
       icon: Globe,
-      color: 'from-purple-500 to-purple-600', 
+      color: 'charcoal', 
       skills: skills.frontend
     },
     backend: {
       title: 'Backend',
       icon: Database,
-      color: 'from-indigo-500 to-indigo-600',
+      color: 'charcoal',
       skills: skills.backend
     },
     databases: {
       title: 'Databases',
       icon: Layers,
-      color: 'from-emerald-500 to-emerald-600',
+      color: 'charcoal',
       skills: skills.databases
     },
     blockchain: {
       title: 'Blockchain',
       icon: Coins,
-      color: 'from-orange-500 to-orange-600',
+      color: 'charcoal',
       skills: skills.blockchain
     },
     tools: {
       title: 'Developer Tools',
       icon: Wrench,
-      color: 'from-slate-500 to-slate-600',
+      color: 'charcoal',
       skills: skills.tools
     }
   };
