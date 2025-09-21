@@ -99,12 +99,12 @@ const Skills = () => {
             return (
               <Card 
                 key={key}
-                className={`p-6 bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}
+                className={`p-6 bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover-lift card-3d ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="mb-6">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${category.color} p-3 mb-4 transform transition-transform duration-300 hover:scale-110`}>
-                    <IconComponent className="w-6 h-6 text-white" />
+                  <div className={`w-12 h-12 rounded-xl bg-charcoal p-3 mb-4 transform transition-transform duration-300 hover:scale-110 hover:rotate-12`}>
+                    <IconComponent className="w-6 h-6 text-cream" />
                   </div>
                   <h3 className="text-xl font-semibold text-slate-800 mb-2">
                     {category.title}
